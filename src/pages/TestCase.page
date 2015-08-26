@@ -1,0 +1,20 @@
+<apex:page standardController="Case" extensions="testcase">
+<apex:form >
+<script>
+     /** Function to get the Record type id selected and the call the action method to set the same **/
+                function changeRecordType(record){
+                    var val = document.getElementById(record).value;     
+                    setRecordType(val);
+                }
+</script>
+            <apex:actionFunction name="setRecordType" rerender="level" action="{!fetchRecordTypeName}" >
+                <apex:param name="firstParam" value="" assignTo="{!recordTypeId}"/>
+            </apex:actionFunction>
+ Level:
+ <apex:inputField value="{!caset.Level__c}" id="level"/>
+  <apex:selectList value="{!selectedRecType}" size="1" id="benefitRecipient" required="true" onchange="changeRecordType('{!$Component.this}');" >
+                            <apex:selectOptions value="{!recType}">
+                            </apex:selectOptions>
+                        </apex:selectList>
+  </apex:form>
+</apex:page>

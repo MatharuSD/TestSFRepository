@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Saasu_Contact_UID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Saasu Contact UID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saasu_Sync_Error__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Saasu Sync Error</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <webLinks>
+        <fullName>Sync_to_Saasu</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Sync to Saasu</masterLabel>
+        <openType>sidebar</openType>
+        <page>ContactSyncRedirect</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

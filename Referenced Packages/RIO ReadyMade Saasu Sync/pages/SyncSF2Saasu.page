@@ -1,0 +1,41 @@
+<apex:page controller="readymade_saasu.SyncSF2SaasuController" title="Sync Salesforce {!objectType} to Saasu">
+        <div align="center" style="background-image: url({!$Resource.background});background-repeat: repeat-x;" >
+            <a href="http://www.wdcigroup.net" target="_blank">
+                <apex:image id="theImage" value="{!$Resource.readymade_saasu__SmallLogo}" style="align:right"/>
+            </a>
+        </div>
+    <apex:form >
+        <apex:pageBlock title="Salesforce-Saasu Sync" rendered="{!isSuccess}">
+            <table border='0' width="450px">
+                <tr>
+                    <td width="80%">
+                        <apex:outputPanel rendered="{!IF(objectType == 'opportunity', true, false)}">
+                            <b>Option:</b> Email invoice to contact? <apex:inputCheckbox value="{!sendEmail}"/>
+                        </apex:outputPanel>
+                    </td>
+                    <td width="10%">&nbsp;</td>
+                    <td width="10%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="80%">&nbsp;</td>
+                    <td width="10%">&nbsp;</td>
+                    <td width="10%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="80%">Click yes to confirm and sync this record to Saasu.</td>
+                    <td width="10%"><apex:commandButton action="{!doSync}" value="  Yes  " id="yes"/></td>
+                    <td width="10%"><apex:commandButton action="{!doCancel}" value="Cancel" id="no"/></td>
+                </tr>
+            </table>
+        </apex:pageBlock>
+        <apex:pageBlock title="Salesforce-Saasu Sync" rendered="{!IF(isSuccess, false, true)}">
+            <table border='0' width="400px">
+                <tr>
+                    <td width="90%">The sync was not successful. Please review the error below.</td>
+                    <td width="10%"><apex:commandButton action="{!doCancel}" value="Done" id="done"/></td>
+                </tr>
+            </table>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:pageMessages rendered="true"></apex:pageMessages>
+</apex:page>

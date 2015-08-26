@@ -1,0 +1,14 @@
+<apex:page controller="CaseTiming">
+
+    <!-- Include the JS for Service Console Toolkit-->
+    <apex:includeScript value="/support/console/28.0/integration.js"/>
+    <script>
+        window.onload = function() {
+            sforce.console.getFocusedPrimaryTabObjectId(showObjectId);
+        }
+        var showObjectId = function showObjectId(result) {
+            //Display the object ID
+            alert('Object ID: ' + result.id);
+        };
+    </script>
+</apex:page>
