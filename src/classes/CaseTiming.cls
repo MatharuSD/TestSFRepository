@@ -4,6 +4,7 @@ global class CaseTiming {
     global static String createCaseTiming(String caseId) {
        Case caseRec = [select status from case where id =:caseId];
        if(caseRec.status.equalsIgnoreCase('Working')){
+       	//Do something over here
                //caseTimer = new Case(id = caseId);
            //caseTimer.description = String.valueOf(system.now());
            //upsert caseTimer;
