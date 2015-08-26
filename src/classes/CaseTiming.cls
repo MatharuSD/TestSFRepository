@@ -9,6 +9,7 @@ global class CaseTiming {
            //caseTimer.description = String.valueOf(system.now());
            //upsert caseTimer;
            //Added a new comment
+           String newChange;
            return caseId;
        }else{
            return null;
