@@ -4,7 +4,7 @@ global class CaseTiming {
     global static String createCaseTiming(String caseId) {
        Case caseRec = [select status from case where id =:caseId];
        if(caseRec.status.equalsIgnoreCase('Working')){
-       	String newStr='samreet';
+       	String newStr='samreet1';
            return caseId;
        }else{
            return null;
